@@ -1,7 +1,7 @@
 name: pitchupflutter
-description: A new Flutter package project.
+description: This library can be used to implement your own instrument tuning app.
 version: 0.0.1
-homepage:
+homepage: https://techpotatoes.github.io/pitchup-flutter/
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
