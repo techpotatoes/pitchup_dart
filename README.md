@@ -24,4 +24,4 @@ See a sample of the library usage here: https://github.com/techpotatoes/pitchup-
 
 ## Additional information
 
-This is an open-source library. Feel free to copy and modify it as you wish. You are also more than encoraged to submit pull request to fix or improve the library.
+This is an open-source library. Feel free to copy and modify it as you wish. You are also more than encoraged to submit pull requests to fix or improve the library.

@@ -1,10 +1,10 @@
-library pitchupflutter;
+library pitchupdart;
 
 import 'dart:math';
 
-import 'package:pitchupflutter/instrument_type.dart';
-import 'package:pitchupflutter/pitch_result.dart';
-import 'package:pitchupflutter/tuning_status.dart';
+import 'package:pitchupdart/instrument_type.dart';
+import 'package:pitchupdart/pitch_result.dart';
+import 'package:pitchupdart/tuning_status.dart';
 
 class PitchHandler {
   final InstrumentType _instrumentType;

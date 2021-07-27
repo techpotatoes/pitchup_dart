@@ -1,6 +1,6 @@
-library pitchupflutter;
+library pitchupdart;
 
-import 'package:pitchupflutter/tuning_status.dart';
+import 'package:pitchupdart/tuning_status.dart';
 
 class PitchResult {
   final String note;

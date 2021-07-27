@@ -1,3 +1,3 @@
-library pitchupflutter;
+library pitchupdart;
 
 enum InstrumentType { guitar }
