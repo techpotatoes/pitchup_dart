@@ -1,39 +1,29 @@
-<!-- 
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+## Pitchup library
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages). 
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages). 
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+This library is a port from the kotlin library https://github.com/techpotatoes/pitchup. It can be used to implement your own instrument tuning app.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+Insturments supported: Guitar
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+To import the library into your project, go to your project pubspec.yaml file and add: 
+
+XXX - TODO
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
+Call the function handlePitch and give it the pitch you want to evaluate. The result of the calculation will contain: 
+  
+  - note: The closest note to the pitch that was given. 
+  - tuningStatus: tuned, toolow, toohigh, waytoolow, waytoohigh, undefined.
+  - expectedFrequency: The expected frequency of the closest note.
+  - diffFrequency: The difference of the frequency found in the analised pitch compared to the expected pitch of the closest note. 
+  - diffCents: The interval difference in cents to the expected closest tuned note. 
 
-```dart
-const like = 'sample';
-```
+See a sample of the library usage here:  TODO
 
 ## Additional information
 
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
+This is an open-source library. Feel free to copy and modify it as you wish. You are also more than encoraged to submit pull request to fix or improve the library.
