@@ -1,6 +1,6 @@
 // ignore_for_file: constant_identifier_names
 
-import 'package:flutter_test/flutter_test.dart';
+import "package:test/test.dart";
 import 'package:pitchupflutter/instrument_type.dart';
 import 'package:pitchupflutter/pitch_handler.dart';
 import 'package:pitchupflutter/pitch_result.dart';
