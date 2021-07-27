@@ -1,3 +1,3 @@
 ## 0.0.1
 
-* First release of the PitchUp library port.
+* First release of the PitchUp dart library.
