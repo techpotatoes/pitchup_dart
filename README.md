@@ -4,13 +4,11 @@ This library is a port from the kotlin library https://github.com/techpotatoes/p
 
 ## Features
 
-Insturments supported: Guitar
+Instruments supported: Guitar
 
 ## Getting started
 
-To import the library into your project, go to your project pubspec.yaml file and add: 
-
-XXX - TODO
+To import the library into your project, go to your project pubspec.yaml and add the dependency.
 
 ## Usage
 
@@ -22,7 +20,7 @@ Call the function handlePitch and give it the pitch you want to evaluate. The re
   - diffFrequency: The difference of the frequency found in the analised pitch compared to the expected pitch of the closest note. 
   - diffCents: The interval difference in cents to the expected closest tuned note. 
 
-See a sample of the library usage here:  TODO
+See a sample of the library usage here: https://github.com/techpotatoes/pitchup-flutter-sample
 
 ## Additional information
 
