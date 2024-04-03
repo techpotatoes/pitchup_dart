@@ -1,10 +1,8 @@
-// ignore_for_file: constant_identifier_names
-
-import "package:test/test.dart";
 import 'package:pitchupdart/instrument_type.dart';
 import 'package:pitchupdart/pitch_handler.dart';
 import 'package:pitchupdart/pitch_result.dart';
 import 'package:pitchupdart/tuning_status.dart';
+import 'package:test/test.dart';
 
 void main() {
   const epsilon = 0.05;
@@ -64,23 +62,23 @@ void main() {
         test(
             givenPitchStr +
                 ' should return the note: ' +
-                (element[1] as PitchResult).note, () {
-          final result = pitchHandler.handlePitch(element[0] as double);
+                (element[1] as PitchResult).note, () async {
+          final result = await pitchHandler.handlePitch(element[0] as double);
           expect(result.note, (element[1] as PitchResult).note);
         });
 
         test(
             givenPitchStr +
                 ' should return the status: ' +
-                (element[1] as PitchResult).tuningStatus.toString(), () {
-          final result = pitchHandler.handlePitch(element[0] as double);
+                (element[1] as PitchResult).tuningStatus.toString(), () async {
+          final result = await pitchHandler.handlePitch(element[0] as double);
           expect(result.tuningStatus, (element[1] as PitchResult).tuningStatus);
         });
         test(
             givenPitchStr +
                 ' should return the expected frequency: ' +
-                (element[1] as PitchResult).expectedFrequency.toString(), () {
-          final result = pitchHandler.handlePitch(element[0] as double);
+                (element[1] as PitchResult).expectedFrequency.toString(), () async {
+          final result = await pitchHandler.handlePitch(element[0] as double);
           expect((element[1] as PitchResult).expectedFrequency,
               closeTo(result.expectedFrequency, epsilon));
         });
@@ -88,8 +86,8 @@ void main() {
         test(
             givenPitchStr +
                 ' should return the freq diff: ' +
-                (element[1] as PitchResult).diffFrequency.toString(), () {
-          final result = pitchHandler.handlePitch(element[0] as double);
+                (element[1] as PitchResult).diffFrequency.toString(), () async {
+          final result = await pitchHandler.handlePitch(element[0] as double);
           expect((element[1] as PitchResult).diffFrequency,
               closeTo(result.diffFrequency, epsilon));
         });
@@ -97,8 +95,8 @@ void main() {
         test(
             givenPitchStr +
                 ' should return the diff cents: ' +
-                (element[1] as PitchResult).diffCents.toString(), () {
-          final result = pitchHandler.handlePitch(element[0] as double);
+                (element[1] as PitchResult).diffCents.toString(), () async {
+          final result = await pitchHandler.handlePitch(element[0] as double);
           expect(
             (element[1] as PitchResult).diffCents,
             closeTo(result.diffCents, epsilon),
