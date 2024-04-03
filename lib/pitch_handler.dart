@@ -8,16 +8,16 @@ import 'package:pitchupdart/tuning_status.dart';
 
 class PitchHandler {
   final InstrumentType _instrumentType;
-  dynamic _minimumPitch;
-  dynamic _maximumPitch;
-  dynamic _noteStrings;
+  late double _minimumPitch;
+  late double _maximumPitch;
+  late List<String> _noteStrings;
 
   PitchHandler(this._instrumentType) {
     switch (_instrumentType) {
       case InstrumentType.guitar:
-        _minimumPitch = 80.0;
-        _maximumPitch = 1050.0;
-        _noteStrings = [
+        this._minimumPitch = 80.0;
+        this._maximumPitch = 1050.0;
+        this._noteStrings = [
           "C",
           "C#",
           "D",
@@ -35,7 +35,7 @@ class PitchHandler {
     }
   }
 
-  PitchResult handlePitch(double pitch) {
+  Future<PitchResult> handlePitch(double pitch) {
     if (_isPitchInRange(pitch)) {
       final noteLiteral = _noteFromPitch(pitch);
       final expectedFrequency = _frequencyFromNoteNumber(_midiFromPitch(pitch));
@@ -44,11 +44,12 @@ class PitchHandler {
       final diffCents =
           _diffInCents(expectedFrequency, expectedFrequency - diff);
 
-      return PitchResult(
-          noteLiteral, tuningStatus, expectedFrequency, diff, diffCents);
+      return Future.value(PitchResult(
+          noteLiteral, tuningStatus, expectedFrequency, diff, diffCents)
+      );
     }
 
-    return PitchResult("", TuningStatus.undefined, 0.00, 0.00, 0.00);
+    return Future.value(PitchResult("", TuningStatus.undefined, 0.00, 0.00, 0.00));
   }
 
   bool _isPitchInRange(double pitch) {
