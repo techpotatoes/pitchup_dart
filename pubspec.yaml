@@ -1,6 +1,6 @@
 name: pitchupdart
 description: This library can be used to implement your own instrument tuning app.
-version: 0.0.3
+version: 0.0.4
 homepage: https://techpotatoes.github.io/pitchup_dart/
 
 environment:
