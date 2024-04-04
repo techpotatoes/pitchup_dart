@@ -12,7 +12,7 @@ To import the library into your project, go to your project pubspec.yaml and add
 
 ```dart
 dependencies:
-  pitchupdart: ^0.0.3
+  pitchupdart: ^0.0.4
 ```
 
 ## Usage
@@ -24,7 +24,7 @@ Call the function handlePitch and give it the pitch you want to evaluate.
 final pitchUp = PitchHandler(InstrumentType.guitar);
 
 //Uses the pitchUp library to check if a a given pitch consists of a guitar note and if it's tuned 
-final handledPitchResult = pitchUp.handlePitch(pitch);
+final handledPitchResult = await pitchUp.handlePitch(pitch);
 ```
 
 The handledPitchResult containing the result of calculation will return: 
