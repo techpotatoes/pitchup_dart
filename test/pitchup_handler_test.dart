@@ -77,7 +77,8 @@ void main() {
         test(
             givenPitchStr +
                 ' should return the expected frequency: ' +
-                (element[1] as PitchResult).expectedFrequency.toString(), () async {
+                (element[1] as PitchResult).expectedFrequency.toString(),
+            () async {
           final result = await pitchHandler.handlePitch(element[0] as double);
           expect((element[1] as PitchResult).expectedFrequency,
               closeTo(result.expectedFrequency, epsilon));

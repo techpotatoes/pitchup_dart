@@ -1,3 +1,4 @@
+/// Library
 library pitchupdart;
 
 import 'dart:math';
@@ -6,6 +7,7 @@ import 'package:pitchupdart/instrument_type.dart';
 import 'package:pitchupdart/pitch_result.dart';
 import 'package:pitchupdart/tuning_status.dart';
 
+/// Handles a pitch and validates it given an instrument
 class PitchHandler {
   final InstrumentType _instrumentType;
   late double _minimumPitch;
@@ -35,6 +37,7 @@ class PitchHandler {
     }
   }
 
+  //Handle pitch based in the instrument chosen
   Future<PitchResult> handlePitch(double pitch) {
     if (_isPitchInRange(pitch)) {
       final noteLiteral = _noteFromPitch(pitch);
@@ -45,32 +48,37 @@ class PitchHandler {
           _diffInCents(expectedFrequency, expectedFrequency - diff);
 
       return Future.value(PitchResult(
-          noteLiteral, tuningStatus, expectedFrequency, diff, diffCents)
-      );
+          noteLiteral, tuningStatus, expectedFrequency, diff, diffCents));
     }
 
-    return Future.value(PitchResult("", TuningStatus.undefined, 0.00, 0.00, 0.00));
+    return Future.value(
+        PitchResult("", TuningStatus.undefined, 0.00, 0.00, 0.00));
   }
 
+  /// Checks if pitch is between the range of the instrument
   bool _isPitchInRange(double pitch) {
     return pitch > _minimumPitch && pitch < _maximumPitch;
   }
 
+  /// Tries to find a note from a pitch value
   String _noteFromPitch(double frequency) {
     final noteNum = 12.0 * (log((frequency / 440.0)) / log(2.0));
     return _noteStrings[
         ((noteNum.roundToDouble() + 69.0).toInt() % 12.0).toInt()];
   }
 
+  /// Difference in Hz to the closest note
   double _diffFromTargetedNote(double pitch) {
     final targetPitch = _frequencyFromNoteNumber(_midiFromPitch(pitch));
     return targetPitch - pitch;
   }
 
+  /// Difference in Hz to the closest note
   double _diffInCents(double expectedFrequency, double frequency) {
     return 1200.0 * log(expectedFrequency / frequency);
   }
 
+  /// Returns tunning status
   TuningStatus _getTuningStatus(double diff) {
     if (diff >= -0.3 && diff <= 0.3) {
       return TuningStatus.tuned;
