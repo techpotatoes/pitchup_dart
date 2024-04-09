@@ -5,3 +5,7 @@
 ## 0.0.2
 
 * Updated README with how to use and sample.
+
+## 0.0.5
+
+* Updated docs and sample.
