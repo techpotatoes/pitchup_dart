@@ -12,7 +12,7 @@ To import the library into your project, go to your project pubspec.yaml and add
 
 ```dart
 dependencies:
-  pitchupdart: ^0.0.4
+  pitchupdart: ^0.0.5
 ```
 
 ## Usage
